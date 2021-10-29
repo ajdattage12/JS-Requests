@@ -2,7 +2,7 @@
 //THE TEST SERVER IS RUNNING ON LOCALHOST:3000//
 ////////////////////////////////////////////////
 
-const { response } = require("express")
+
 
 
 
@@ -211,14 +211,14 @@ document.getElementById('query-button').addEventListener("click", makeRequest)
 
 // CODE HERE 
 
-// const createFood = () =>{
-//     let foodInput = document.querySelector('input').value
-//     let 
-//     axios.get(`${baseURL}/food`)
-//     .then((response) => {
-//     console.log(response)
-//     })
-//     .catch((error) => {
-//     console.log(error)
-//     })
-// } 
+const createFood = () =>{
+    let foodInput = document.querySelector('input').value
+    let 
+    axios.get(`${baseURL}/food`)
+    .then((response) => {
+    console.log(response)
+    })
+    .catch((error) => {
+    console.log(error)
+    })
+} 
