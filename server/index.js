@@ -33,9 +33,9 @@ app.get('/query-test', (req, res) => {
     }
 })
 
-let foods = []
 
 app.post('/food', (req, res) => {
+    let foods = []
     const { newFood } = req.body
     foods.push(newFood)
     res.status(200).send(foods)

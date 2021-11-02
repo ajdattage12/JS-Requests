@@ -213,12 +213,47 @@ document.getElementById('query-button').addEventListener("click", makeRequest)
 
 const createFood = () =>{
     let foodInput = document.querySelector('input').value
-    let 
-    axios.get(`${baseURL}/food`)
+    let body = {
+        "newFood" : foodInput
+    }
+    axios.post(`${baseURL}/food`, body)
     .then((response) => {
-    console.log(response)
+    console.log(response.data)
+    let p = document.createElement ('p');
+    document.body.appendChild(p);
+    p.textContent = response.data;
     })
     .catch((error) => {
     console.log(error)
     })
+    console.log(body)
 } 
+
+document.getElementById(`food-button`).addEventListener("click", createFood)
+
+// let createFood = () => {
+//     let foodInput = document.querySelector("input");
+//     let body = {
+//         "newFood": foodInput.value
+//     }
+//     console.log(body);
+//     axios.post("http://localhost:3000/food", body)
+//     .then(res => {
+//         console.log(res.data)
+//         let p = document.createElement('p');
+//         document.body.appendChild(p);
+//         p.textContent = res.data;
+//     })
+//     .catch(err => {
+//         console.log(err.data)
+//     })
+//     foodInput.value = '';
+// }
+
+// document.querySelector(".foodBtn").addEventListener('click', createFood);
+// document.querySelector("input").addEventListener("keyup", event => {
+//     if (event.key === "Enter") {
+//         event.preventDefault();
+//         document.querySelector(".foodBtn").click()
+//     }
+// })
